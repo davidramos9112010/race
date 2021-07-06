@@ -9,7 +9,7 @@ race_car2_height=90;
 race_car2_x=10;
 race_car2_y=10;
 backround_image="ractrack.jpg";
-race_car1_image1="racecar.image1.png";
+race_car1_image="racecar.image1.png";
 race_car2_image="racecar.image2.png";
 function add(){background_imgTag = new Image();
      //defining a variable with a new image
@@ -45,9 +45,27 @@ function add(){background_imgTag = new Image();
          if(keyPressed == '87') { car2_up(); console.log("key w"); } 
          if(keyPressed == '83') { car2_down(); console.log("key s"); } 
          if(keyPressed == '65') { car2_left(); console.log("key a"); } 
-         if(keyPressed == '68') { car2_right(); console.log("key d"); } }
+         if(keyPressed == '68') { car2_right(); console.log("key d"); } 
+        
+        if(race_car1_x>700)
+{
+console.log("car1 won");
+document.getElementById('game_status').innerhtml = "car 1 won";
+
+
+}
+
+else if(race_car2_x>700)
+{
+console.log("car2 won");
+document.getElementById('game_status').innerhtml = "car 2 won";
+
+
+}
+    
+    }
          function up() { 
-            if(rover_y >=0) { race_car1_y = race_car1_y - 10;
+            if(race_car1_y >=0) { race_car1_y = race_car1_y - 10;
                 console.log("When up arrow is pressed, x = " + race_car1_x + " | y = " +race_car1_y);
                  uploadBackground();
                   uploadracecar1(); } } 
